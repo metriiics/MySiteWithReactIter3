@@ -1,0 +1,102 @@
+/* Home.css */
+.home-container {
+  position: relative;
+  min-height: 100vh;
+}
+
+/* Фоновое изображение */
+.picture-home {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+.picture-home img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Блок с размытием и текстом */
+.home-info {
+  position: fixed; /* Изменено с absolute на fixed */
+  top: 0;
+  left: 2.5%;
+  height: 100vh; /* На всю высоту экрана */
+  width: 700px; /* Фиксированная ширина - можете изменить */
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  border-right: 1px solid rgba(255, 255, 255, 0.3); /* Граница только справа */
+  padding: 40px; /* Внутренние отступы */
+  box-sizing: border-box; /* Чтобы padding не влиял на общую ширину */
+  
+  /* Центрирование содержимого по вертикали */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* Стили текста */
+.naming p {
+  color: black;
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin: 0 0 20px 0;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+/* Меню */
+.header-menu-home {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.header-menu-home li {
+  margin-bottom: 15px;
+}
+
+.header-menu-home a {
+  color: black;
+  text-decoration: none;
+  font-size: 1.2rem;
+  transition: color 0.3s;
+  display: block;
+  padding: 5px 0;
+}
+
+.header-menu-home a:hover {
+  color: #3a86ff;
+}
+
+.socialink {
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 100vh;
+  width: 50px; /* Ширина столба */
+  background-color: black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 30px; /* Расстояние между иконками */
+  padding: 20px 0;
+  box-sizing: border-box;
+  z-index: 10; /* Чтобы был поверх других элементов */
+}
+
+.socialink img {
+  width: 30px; /* Размер иконок */
+  height: 30px;
+  transition: transform 0.3s ease;
+}
+
+.socialink img:hover {
+  transform: scale(1.2); /* Эффект при наведении */
+}

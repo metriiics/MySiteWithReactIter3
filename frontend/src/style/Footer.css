@@ -1,0 +1,59 @@
+footer {
+  background-color: black;
+  position: fixed;
+  width: 100%;
+  color: white;
+  padding: 1rem;
+  bottom: 0;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Базовые стили переключателя */
+.toggle-checkbox {
+  position: absolute;
+  right: 90px;
+  display: inline-block;
+  width: 50px;
+  height: 26px;
+  background: #ddd;
+  border-radius: 13px;
+  position: relative;
+  cursor: pointer;
+}
+
+/* Стили для внутреннего кружка */
+.toggle-checkbox::after {
+  content: "";
+  width: 22px;
+  height: 22px;
+  background: white;
+  border-radius: 50%;
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  transition: 0.3s;
+}
+
+.toggle-checkbox:has(input:checked) {
+  background: #4CAF50;
+}
+
+.toggle-checkbox:has(input:checked)::after {
+  left: calc(100% - 24px);
+}
+
+.userName p {
+  margin: 0;
+  font-size: 1rem;
+  padding-left: 100px;
+}
+
+.lang-select {
+  margin-left: 1300px; 
+  font-size: 1rem;
+}
