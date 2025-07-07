@@ -4,17 +4,29 @@ import Footer from "../components/Footer";
 export default function Projects() {
 
   return (
-    <div className="proj-container">
-        <Header />
-
-        <h1>Projects</h1>
-
-        <div className="container-content">
-            <h3>Name</h3>
-
+    <div className="container-content-projects">
+      
+        <div className="content-projects-info">
+          <h3 className="title-project">Naming Project</h3>
+          <p className="description-project">Description</p>
+          <p className="tags-project">C++, C, Py</p>
+          <a href="https://github.com/metriiics/CRMProzdorovie" className="link-project" target="_blank">github</a>
         </div>
 
-        <Footer />
+        <div className="content-projects-info">
+          <h3 className="title-project">Naming Project</h3>
+          <p className="description-project">Description</p>
+          <p className="tags-project">C++, C, Py</p>
+          <a href="https://github.com/metriiics/CRMProzdorovie" className="link-project" target="_blank">github</a>
+        </div>
+
+        <div className="content-projects-info">
+          <h3 className="title-project">Naming Project</h3>
+          <p className="description-project">Description</p>
+          <p className="tags-project">C++, C, Py</p>
+          <a href="https://github.com/metriiics/CRMProzdorovie" className="link-project" target="_blank">github</a>
+        </div>
+
     </div>
   );
 }

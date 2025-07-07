@@ -1,0 +1,47 @@
+/* Основной контейнер для всех проектов */
+.container-content-projects {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: flex-start;
+  padding: 20px 300px 0;; /* Отступы внутри контейнера от краев */
+  margin: 10px; /* Отступы снаружи контейнера */
+  width: calc(100% - 40px); /* Компенсируем padding, чтобы не было горизонтального скролла */
+  box-sizing: border-box; /* Чтобы padding не увеличивал общую ширину */
+}
+
+/* Контейнер каждого проекта */
+.content-projects-info {
+  width: calc(33.333% - 14px); /* Ширина для трёх колонок с учётом gap */
+  box-sizing: border-box;
+  padding: 15px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+}
+
+
+/* Опциональные стили для внутренних элементов */
+.title-project {
+  margin-top: 0;
+  color: #333;
+}
+
+.description-project {
+  color: #666;
+}
+
+.tags-project {
+  color: #888;
+  font-size: 0.9em;
+}
+
+.link-project {
+  display: inline-block;
+  margin-top: 10px;
+  color: #0066cc;
+  text-decoration: none;
+}
+
+.link-project:hover {
+  text-decoration: underline;
+}
