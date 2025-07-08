@@ -1,0 +1,26 @@
+/* themes.css */
+
+/* По умолчанию — светлая тема */
+:root {
+  --bg-color: #ffffff;
+  --text-color: #111111;
+  --accent-color: #007bff;
+  --supportive-color: #808080;
+}
+
+/* Темная тема */
+.dark {
+  --bg-color: black;
+  --text-color: #ffffff;
+  --accent-color: #007bff;
+  --supportive-color: #1C1C1C;
+}
+
+/* Основные настройки страницы */
+body {
+  background-color: var(--bg-color); /* Черный фон */
+  color: var(--text-color); /* Белый текст по умолчанию */
+  font-family: "Pixelify Sans", sans-serif; /* Современный шрифт */
+  margin: 0;
+  padding: 0;
+}

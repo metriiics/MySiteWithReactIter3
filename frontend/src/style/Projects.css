@@ -4,44 +4,79 @@
   flex-wrap: wrap;
   gap: 20px;
   justify-content: flex-start;
-  padding: 20px 300px 0;; /* Отступы внутри контейнера от краев */
-  margin: 10px; /* Отступы снаружи контейнера */
-  width: calc(100% - 40px); /* Компенсируем padding, чтобы не было горизонтального скролла */
-  box-sizing: border-box; /* Чтобы padding не увеличивал общую ширину */
+  padding: 20px 5%; /* Адаптивные боковые отступы */
+  margin: 0 auto; /* Центрирование */
+  max-width: 1700px; /* Максимальная ширина */
+  box-sizing: border-box;
+  
 }
 
 /* Контейнер каждого проекта */
 .content-projects-info {
   width: calc(33.333% - 14px); /* Ширина для трёх колонок с учётом gap */
   box-sizing: border-box;
-  padding: 15px;
-  border: 1px solid #ddd;
-  border-radius: 8px;
+  padding: 20px;
+  border-radius: 12px; /* Увеличил скругление */
+  background-color: var(--supportive-color); /* Темный фон карточки */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  
 }
 
+.content-projects-info:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 150, 255, 0.1);
+}
 
-/* Опциональные стили для внутренних элементов */
+/* Стили для текстовых элементов */
 .title-project {
+  text-align: center;
   margin-top: 0;
-  color: #333;
+  color: #fff;
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 10px;
+  justify-content: center;
 }
 
 .description-project {
-  color: #666;
+  text-align: center;
+  color: #ccc;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  margin-bottom: 15px;
 }
 
 .tags-project {
-  color: #888;
-  font-size: 0.9em;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 15px; 
+  justify-content: center;
+}
+
+.tag-item {
+  display: inline-block;
+  padding: 4px 12px;
+  background-color: var(--bg-color);
+  color: var(--accent-color);
+  font-size: 1rem;
+  border-radius: 5px;
 }
 
 .link-project {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
   margin-top: 10px;
-  color: #0066cc;
+  color: var(--text-color);
+  background-color: var(--accent-color);
+  padding: 4px 8px;
+  border-radius: 6px;
   text-decoration: none;
+  font-weight: 400;
 }
 
-.link-project:hover {
-  text-decoration: underline;
+.link-icon {
+  width: 20px;
+  height: 20px;
 }
