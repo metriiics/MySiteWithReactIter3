@@ -1,5 +1,3 @@
-import Header from "../components/Header";
-import Footer from "../components/Footer";
 import { useState, useEffect } from "react";
 
 export default function Projects() {
@@ -24,7 +22,7 @@ export default function Projects() {
           <p className="description-project">{proj.projects_description}</p>
           <div className="tags-project">
             {(proj.projects_tags || []).map((tag, index) => (
-                <span key={index} className="tag-item">{tag.trim ? tag.trim() : tag}</span>
+                <span key={index} className="project-tag-item">{tag.trim ? tag.trim() : tag}</span>
             ))}
           </div>
           <a href={proj.projects_link} className="link-project" target="_blank">

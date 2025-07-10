@@ -7,7 +7,7 @@ export default function Home() {
     <div className="home-container">
         
         <div className="picture-home">
-            <img src="/logo192.png" />
+            <img src="/backHomeLight.png" />
         </div>
 
         <div className="socialink">

@@ -4,20 +4,28 @@
   min-height: 100vh;
 }
 
-/* Фоновое изображение */
 .picture-home {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  z-index: -1;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #000; /* Фон на случай, если изображение не покрывает всю область */
 }
 
 .picture-home img {
-  width: 100%;
-  height: 100%;
+  min-width: 100%;
+  min-height: 100%;
   object-fit: cover;
+  /* Дополнительно можно добавить: */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 /* Блок с размытием и текстом */
@@ -27,11 +35,10 @@
   left: 2.5%;
   height: 100vh; /* На всю высоту экрана */
   width: 700px; /* Фиксированная ширина - можете изменить */
-  background: rgba(255, 255, 255, 0.2);
+  background: var(--color-blur);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-  border-right: 1px solid rgba(255, 255, 255, 0.3); /* Граница только справа */
   padding: 40px; /* Внутренние отступы */
   box-sizing: border-box; /* Чтобы padding не влиял на общую ширину */
   
@@ -43,9 +50,10 @@
 
 /* Стили текста */
 .naming p {
-  color: black;
+  color: var(--accent-color);
   font-size: 2.5rem;
   font-weight: bold;
+  text-align: center;
   margin: 0 0 20px 0;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
@@ -55,10 +63,18 @@
   list-style: none;
   padding: 0;
   margin: 0;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  gap: 20px; 
 }
 
 .header-menu-home li {
-  margin-bottom: 15px;
+  margin-bottom: 0;
+  margin-right: 15px;
+  background: var(--supportive-color); 
+  border-radius: 8px; 
+  padding: 1px 12px
 }
 
 .header-menu-home a {

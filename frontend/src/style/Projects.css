@@ -16,14 +16,13 @@
   width: calc(33.333% - 14px); /* Ширина для трёх колонок с учётом gap */
   box-sizing: border-box;
   padding: 20px;
-  border-radius: 12px; /* Увеличил скругление */
+  border-radius: 12px;
   background-color: var(--supportive-color); /* Темный фон карточки */
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: box-shadow 0.3s ease;
   
 }
 
 .content-projects-info:hover {
-  transform: translateY(-5px);
   box-shadow: 0 10px 20px rgba(0, 150, 255, 0.1);
 }
 
@@ -54,7 +53,7 @@
   justify-content: center;
 }
 
-.tag-item {
+.project-tag-item {
   display: inline-block;
   padding: 4px 12px;
   background-color: var(--bg-color);
