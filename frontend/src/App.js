@@ -5,6 +5,7 @@ import "./style/Home.css";
 import "./style/Projects.css";
 import "./style/Post.css";
 import "./style/theme.css";
+import "./style/Whois.css";
 import Footer from "./components/Footer";
 import Header from "./components/Header";
 import Home from "./components/Home";

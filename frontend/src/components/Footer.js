@@ -1,8 +1,16 @@
 import { useState, useEffect } from "react";
 import { Sun, Moon } from "lucide-react";
+import { useTranslation } from 'react-i18next';
+import Select from 'react-select';
 
 export default function Footer() {
   const [isChecked, setChecked] = useState(false);
+  const { t, i18n } = useTranslation();
+
+  const changeLanguage = (lng) => {
+    i18n.changeLanguage(lng);
+  };
+  
 
   useEffect(() => {
     const theme = localStorage.getItem("theme");
@@ -38,12 +46,12 @@ export default function Footer() {
     <footer>
         <div className="footer-content">
             <div className="userName">
-                <p>© 2025 Алексей Кочетков.</p>
+                <p>{t('footer.copyright')}</p>
             </div>
 
-            <select className="lang-select">
-              <option>Ru</option>
-              <option>En</option>
+            <select className="lang-select" value={i18n.language} onChange={(e) => changeLanguage(e.target.value)}>
+              <option value="ru">Ru</option>
+              <option value="en">En</option>
             </select>
 
             <label className="toggle-checkbox">

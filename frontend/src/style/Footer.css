@@ -3,7 +3,7 @@ footer {
   position: fixed;
   width: 100%;
   color: var(--text-color);
-  padding: 1rem;
+  padding:0.5rem;
   bottom: 0;
 }
 
@@ -20,8 +20,11 @@ footer {
 }
 
 .lang-select {
+  margin-left: auto;
   font-size: 1rem;
+
 }
+
 .toggle-checkbox {
   position: relative;
   width: 60px;

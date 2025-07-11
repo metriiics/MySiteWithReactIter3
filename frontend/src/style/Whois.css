@@ -1,0 +1,69 @@
+.whoisContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  width: 100%;
+  min-height: 100vh;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.PresentationLayer,
+.StackLayer,
+.AboutLayer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  max-width: 800px;
+  margin-bottom: 40px;
+}
+
+.welcomeHeading {
+  margin-bottom: 20px;
+}
+
+.welcomeText {
+  margin-bottom: 20px;
+  line-height: 1.6;
+}
+
+.profileImg {
+  width: 800px;
+  height: 400px;
+  object-fit: cover;
+  margin: 20px 0;
+}
+
+
+/* Стили для контейнера бегущей строки */
+.marquee {
+  display: flex;
+  align-items: center;
+  gap: 40px; /* расстояние между инструментами */
+}
+
+/* Стили для каждого инструмента внутри бегущей строки */
+.marquee > div {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  white-space: nowrap;
+}
+
+/* Логотипы инструментов */
+.marquee img {
+  height: 30px;
+  width: 30px;
+  object-fit: contain;
+  border-radius: 6px;
+}
+
+/* Названия инструментов */
+.marquee span {
+  font-size: 18px;
+  font-weight: 500;
+  user-select: none;
+}

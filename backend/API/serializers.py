@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import Projects, Post
+from .models import Projects, Post, Tools
 from taggit.serializers import (TagListSerializerField, TaggitSerializer)
 
 class ProjectsSerializer(TaggitSerializer, serializers.ModelSerializer):
@@ -15,3 +15,9 @@ class PostSerializer(TaggitSerializer, serializers.ModelSerializer):
     class Meta:
         model = Post 
         fields = ('pk', 'post_image', 'post_title', 'post_data', 'post_tags', 'post_description', 'post_link')
+
+
+class ToolsSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Tools 
+        fields = ('pk', 'tools_name', 'tools_image')

@@ -15,3 +15,8 @@ class Post(models.Model):
     post_tags = TaggableManager()
     post_description = models.CharField(max_length=750)
     post_link = models.URLField(max_length=200)
+
+class Tools(models.Model):
+    tools_name = models.CharField(max_length=100)
+    tools_image = models.ImageField(upload_to='tools/', null=True)
+    

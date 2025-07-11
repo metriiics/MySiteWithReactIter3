@@ -1,8 +1,8 @@
 from django.shortcuts import render
 from rest_framework.views import APIView
 from rest_framework.response import Response
-from .models import Projects, Post
-from .serializers import ProjectsSerializer, PostSerializer
+from .models import Projects, Post, Tools
+from .serializers import ProjectsSerializer, PostSerializer, ToolsSerializer
 
 class ProjectsApiView(APIView):
     def get(self, request):
@@ -14,4 +14,10 @@ class PostApiView(APIView):
     def get(self, request):
         data = Post.objects.all()
         serializers = PostSerializer(data, context={'request': request}, many=True)
+        return Response(serializers.data)
+    
+class ToolsApiView(APIView):
+    def get(self, request):
+        data = Tools.objects.all()
+        serializers = ToolsSerializer(data, context={'request': request}, many=True)
         return Response(serializers.data)
