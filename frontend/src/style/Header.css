@@ -12,8 +12,12 @@
   margin: 0;
   font-size: 2rem;
   font-weight: bold;
-  color: #3a86ff;
+  color: var(--accent-color);
   margin-left: 200px;
+}
+.naming-home p a {
+  color: var(--accent-color);      
+  text-decoration: none;          
 }
 
 .header-menu {

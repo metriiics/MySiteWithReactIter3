@@ -20,7 +20,9 @@ export default function Header() {
     <header className="header">
 
         <div className="naming-home">
-            <p>Metriics</p>
+            <p>
+              <Link to="/">Metriics</Link>
+            </p>
         </div>
 
         <nav className="header-nav">
