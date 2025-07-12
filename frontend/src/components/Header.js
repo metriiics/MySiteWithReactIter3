@@ -1,6 +1,20 @@
 import { Link } from 'react-router-dom';
+import { useState, useEffect } from "react";
 
 export default function Header() {
+
+  useEffect(() => {
+    const links = document.querySelectorAll('.header-menu li a');
+    const currentPath = window.location.pathname;
+
+    links.forEach(link => {
+      if (link.getAttribute('href') === currentPath) {
+        link.classList.add('active');
+      } else {
+        link.classList.remove('active');
+      }
+    });
+  }, [window.location.pathname]);
 
   return (
     <header className="header">

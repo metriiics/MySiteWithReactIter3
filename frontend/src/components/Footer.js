@@ -50,8 +50,8 @@ export default function Footer() {
             </div>
 
             <select className="lang-select" value={i18n.language} onChange={(e) => changeLanguage(e.target.value)}>
-              <option value="ru">Ru</option>
-              <option value="en">En</option>
+              <option value="ru">🇷🇺</option>
+              <option value="en">🇬🇧</option>
             </select>
 
             <label className="toggle-checkbox">
@@ -60,9 +60,10 @@ export default function Footer() {
                   hidden 
                   checked={isChecked}
                   onChange={handleChange}/>
-              <span className="icon sun"><Sun size={16} /></span>
-              <span className="icon moon"><Moon size={16} /></span>
-              <span className="thumb"></span>
+              <span className="thumb">
+                {!isChecked && <Sun className="sun" size={20} />}
+                {isChecked && <Moon className="moon" size={20} />}
+              </span>
             </label>
         </div>
     </footer>

@@ -6,12 +6,14 @@ import "./style/Projects.css";
 import "./style/Post.css";
 import "./style/theme.css";
 import "./style/Whois.css";
+import "./style/PostDetail.css";
 import Footer from "./components/Footer";
 import Header from "./components/Header";
 import Home from "./components/Home";
 import Projects from "./components/Projects";
 import Post from "./components/Post";
 import Whois from "./components/Whois";
+import PostDetail from "./components/PostDetail";
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Layout from "./Layout";
 
@@ -23,6 +25,7 @@ export default function App() {
             <Route path="/" element={<> <Home /> <Footer /> </>} />
             <Route path="/projects" element={<Layout> <Projects /> </Layout>} />
             <Route path="/posts" element={<Layout> <Post /> </Layout>} />
+            <Route path="/posts/:slug/" element={<Layout> <PostDetail /> </Layout>} />
             <Route path="/whois" element={<Layout> <Whois /> </Layout>} />
          </Routes>
       </Router>

@@ -11,7 +11,7 @@
 
 /* Темная тема */
 .dark {
-  --bg-color: black;
+  --bg-color: #111111;
   --text-color: #ffffff;
   --accent-color: #007bff;
   --supportive-color: #1C1C1C;

@@ -1,0 +1,38 @@
+/* Центрируем весь блок по вертикали и горизонтали */
+.content-post-detail {
+  display: flex;
+  flex-direction: column;      /* Вертикальное расположение элементов */
+  justify-content: center;     /* Вертикальное центрирование */
+  align-items: center;         /* Горизонтальное центрирование */
+  min-height: 100vh;           /* Занять всю высоту окна */
+  padding: 20px;
+  box-sizing: border-box;
+  /* Можно изменить фон */
+  text-align: center;          /* Центрируем текст внутри */
+}
+
+/* Заголовок центрирован */
+.title-post-detail {
+  margin-bottom: 20px;
+  font-size: 2rem;
+  font-weight: bold;
+  color: var(--text-color);
+}
+
+/* Контент центрирован и ограничен по ширине */
+.post-content-detail {
+  max-width: 800px;
+  width: 100%;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: var(--text-color);
+}
+
+/* Изображения внутри контента масштабируются и центрируются */
+.post-content-detail img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto 20px auto;
+  border-radius: 8px;
+}

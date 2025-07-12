@@ -1,7 +1,9 @@
 import { useState, useEffect } from "react";
 import Marquee from "react-fast-marquee";
+import { useTranslation } from 'react-i18next';
 
 export default function Whois() {
+  const { t } = useTranslation();
 
   const [tools, setTools] = useState([]);
 
@@ -20,14 +22,14 @@ export default function Whois() {
     <div className="whoisContainer">
 
       <div className="PresentationLayer">
-        <h1 className="welcomeHeading">Lorem Ipsum</h1>
-        <p className="welcomeText">Lorem IpsumLorem IpsumLorem IpsumLorem IpsumvLorem IpsumLorem IpsumLorem IpsumLorem IpsumvLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem Ipsum</p>
+        <h1 className="heading">{t('Whois.PresentationLayer.heading')}</h1>
+        <p className="description">{t('Whois.PresentationLayer.description')}</p>
         <img src="/profileImg.jpg" className="profileImg"/> 
       </div>
 
       <div className="StackLayer">
-        <h1 className="welcomeHeading">My Stack</h1>
-        <p className="welcomeText">Lorem IpsumLorem IpsumLorem IpsumLorem IpsumvLorem IpsumLorem IpsumLorem IpsumLorem IpsumvLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem Ipsum</p>
+        <h1 className="heading">{t('Whois.StackLayer.heading')}</h1>
+        <p className="description">{t('Whois.StackLayer.description')}</p>
         <Marquee gradient={false} speed={50}>
           <div className="marquee">
             {tools.map((tool, idx) => (
@@ -42,12 +44,14 @@ export default function Whois() {
       </div>
 
       <div className="AboutLayer">
-        <h1 className="welcomeHeading">About me</h1>
-        <p className="welcomeText">Lorem IpsumLorem IpsumLorem IpsumLorem IpsumvLorem IpsumLorem IpsumLorem IpsumLorem IpsumvLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem Ipsum</p>
-        <a href="/" className="link-post" target="_blank">My CV/Resume</a>
-        <a href="/" className="link-post" target="_blank">My CV/Resume</a>
-        <a href="/" className="link-post" target="_blank">My CV/Resume</a>
-        <a href="/" className="link-post" target="_blank">My CV/Resume</a>
+        <h1 className="heading">{t('Whois.AboutLayer.heading')}</h1>
+        <p className="description">{t('Whois.AboutLayer.description')}</p>
+        <div className="links-container">
+          <a href="/" className="link-post" target="_blank">My CV/Resume</a>
+          <a href="/" className="link-post" target="_blank">My CV/Resume</a>
+          <a href="/" className="link-post" target="_blank">My CV/Resume</a>
+          <a href="/" className="link-post" target="_blank">My CV/Resume</a>
+        </div>
       </div>
 
     </div>

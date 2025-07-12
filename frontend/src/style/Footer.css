@@ -3,8 +3,9 @@ footer {
   position: fixed;
   width: 100%;
   color: var(--text-color);
-  padding:0.5rem;
+  padding:0.1rem;
   bottom: 0;
+  z-index: 2
 }
 
 .footer-content {
@@ -17,12 +18,20 @@ footer {
 .userName p {
   margin: 0;
   font-size: 1rem;
+  margin-left: 80px; 
 }
 
 .lang-select {
   margin-left: auto;
-  font-size: 1rem;
-
+  font-size: 2rem;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: transparent;
+  border: none; 
+  cursor: pointer;
+  padding-right: 20px;
+  outline: none;
 }
 
 .toggle-checkbox {
@@ -32,18 +41,8 @@ footer {
   background: #333;
   border-radius: 15px;
   cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
   padding: 0 8px;
   box-sizing: border-box;
-}
-
-/* Иконки внутри переключателя */
-.toggle-checkbox .icon {
-  font-size: 16px;
-  color: #fff;
-  pointer-events: none;
 }
 
 /* Ползунок */
@@ -53,9 +52,16 @@ footer {
   left: 3px;
   width: 24px;
   height: 24px;
-  background: white;
+  background: var(--supportive-color);
   border-radius: 50%;
   transition: left 0.3s ease;
+  z-index: 2;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 16px;
 }
 
 /* При включении — ползунок вправо */
@@ -63,13 +69,28 @@ footer {
   left: calc(100% - 27px);
 }
 
-/* Не меняем прозрачность иконок — они всегда видимы */
-.toggle-checkbox .sun,
-.toggle-checkbox .moon {
-  opacity: 1;
+.toggle-checkbox .thumb .sun {
+  display: block;
 }
 
-/* Цвет фона переключателя */
+.toggle-checkbox .thumb .moon {
+  display: none;
+}
+
+.toggle-checkbox:has(input:checked) .thumb .sun {
+  display: none;
+}
+
+.toggle-checkbox:has(input:checked) .thumb .moon {
+  display: block;
+}
+
+/* Фон переключателя */
+.toggle-checkbox {
+  background: #333;
+  transition: background 0.3s ease;
+}
+
 .toggle-checkbox:has(input:checked) {
   background: #555;
 }

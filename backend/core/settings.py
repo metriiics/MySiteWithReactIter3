@@ -31,10 +31,12 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'API',
     'rest_framework',
-    'ckeditor',
+    'django_ckeditor_5',
     'taggit',
     'corsheaders',
 ]
+
+CKEDITOR_5_FILE_UPLOAD_URL = '/ckeditor5/upload/'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -130,3 +132,13 @@ MEDIA_ROOT = BASE_DIR / 'media'
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+CKEDITOR_5_CONFIGS = {
+    'extends': {
+        'toolbar': [
+            'heading', '|', 'bold', 'italic', 'link',
+            'bulletedList', 'numberedList', 'blockQuote', 'imageUpload',
+        ],
+    }
+}
+

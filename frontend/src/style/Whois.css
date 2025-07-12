@@ -21,11 +21,11 @@
   margin-bottom: 40px;
 }
 
-.welcomeHeading {
+.heading {
   margin-bottom: 20px;
 }
 
-.welcomeText {
+.description {
   margin-bottom: 20px;
   line-height: 1.6;
 }
@@ -37,15 +37,13 @@
   margin: 20px 0;
 }
 
-
-/* Стили для контейнера бегущей строки */
 .marquee {
   display: flex;
   align-items: center;
-  gap: 40px; /* расстояние между инструментами */
+  gap: 40px;
+  z-index: 0
 }
 
-/* Стили для каждого инструмента внутри бегущей строки */
 .marquee > div {
   display: flex;
   align-items: center;
@@ -53,7 +51,6 @@
   white-space: nowrap;
 }
 
-/* Логотипы инструментов */
 .marquee img {
   height: 30px;
   width: 30px;
@@ -61,9 +58,31 @@
   border-radius: 6px;
 }
 
-/* Названия инструментов */
 .marquee span {
   font-size: 18px;
   font-weight: 500;
   user-select: none;
+}
+
+.AboutLayer .link-post {
+  display: inline-block;
+  padding: 8px 60px;
+  margin: 8px;
+  background-color: var(--supportive-color);
+  color: var(--text-color);
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: 500;
+  user-select: none;
+  cursor: pointer;
+  text-align: center;
+}
+
+.AboutLayer .links-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px 20px;
+  width: 100%;
+  max-width: 550px; 
+  justify-items: center; 
 }

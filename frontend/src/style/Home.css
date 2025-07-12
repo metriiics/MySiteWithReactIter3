@@ -14,51 +14,45 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background: #000; /* Фон на случай, если изображение не покрывает всю область */
 }
 
 .picture-home img {
   min-width: 100%;
   min-height: 100%;
   object-fit: cover;
-  /* Дополнительно можно добавить: */
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
 
-/* Блок с размытием и текстом */
 .home-info {
-  position: fixed; /* Изменено с absolute на fixed */
+  position: fixed; 
   top: 0;
   left: 2.5%;
-  height: 100vh; /* На всю высоту экрана */
-  width: 700px; /* Фиксированная ширина - можете изменить */
+  height: 100vh;
+  width: 700px;
   background: var(--color-blur);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-  padding: 40px; /* Внутренние отступы */
-  box-sizing: border-box; /* Чтобы padding не влиял на общую ширину */
-  
-  /* Центрирование содержимого по вертикали */
+  padding: 40px;
+  box-sizing: border-box;
+
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
 
-/* Стили текста */
 .naming p {
   color: var(--accent-color);
-  font-size: 2.5rem;
+  font-size: 8rem;
   font-weight: bold;
   text-align: center;
   margin: 0 0 20px 0;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
-/* Меню */
 .header-menu-home {
   list-style: none;
   padding: 0;
@@ -66,28 +60,34 @@
   text-align: center;
   display: flex;
   justify-content: center;
-  gap: 20px; 
+  gap: 15px; 
 }
 
 .header-menu-home li {
-  margin-bottom: 0;
-  margin-right: 15px;
-  background: var(--supportive-color); 
-  border-radius: 8px; 
-  padding: 1px 12px
+  margin: 0; 
+  background: transparent; 
+  padding: 0; 
+  border-radius: 0;
 }
 
 .header-menu-home a {
-  color: black;
+  display: block;
+  width: 100%;
+  height: 100%;
+  padding: 8px 16px;
+  border-radius: 8px;
+  background: var(--supportive-color);
+  color: var(--text-color);
   text-decoration: none;
   font-size: 1.2rem;
-  transition: color 0.3s;
-  display: block;
-  padding: 5px 0;
+  box-sizing: border-box;
+  transition: background 0.3s, color 0.3s;
 }
 
 .header-menu-home a:hover {
-  color: #3a86ff;
+  background: white;
+  cursor: pointer;
+  color: #000;
 }
 
 .socialink {
@@ -95,24 +95,24 @@
   left: 0;
   top: 0;
   height: 100vh;
-  width: 50px; /* Ширина столба */
-  background-color: black;
+  width: 50px;
+  background-color: var(--supportive-color);
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 30px; /* Расстояние между иконками */
+  gap: 30px; 
   padding: 20px 0;
   box-sizing: border-box;
-  z-index: 10; /* Чтобы был поверх других элементов */
+  z-index: 10; 
 }
 
 .socialink img {
-  width: 30px; /* Размер иконок */
+  width: 30px; 
   height: 30px;
   transition: transform 0.3s ease;
 }
 
 .socialink img:hover {
-  transform: scale(1.2); /* Эффект при наведении */
+  transform: scale(1.2); 
 }

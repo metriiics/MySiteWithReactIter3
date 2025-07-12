@@ -1,10 +1,14 @@
 import { useState, useEffect } from "react";
+import { useTranslation } from "react-i18next";
+import { Link } from 'react-router-dom';
 
 export default function Post() {
   const [post, setPost] = useState([]);
   const [tags, setTags] = useState([]);
   const [selectedTags, setSelectedTags] = useState([]);
   const [searchText, setSearchText] = useState("");
+  const { i18n } = useTranslation();
+  const lang = i18n.language === "ru" ? "ru" : "en";
 
   async function fetchPost() {
     const response = await fetch("http://127.0.0.1:8000/api/post/");
@@ -37,25 +41,25 @@ export default function Post() {
     return selectedTags.some(tag => postTags.includes(tag));
   }).filter(p => {
     if (!searchText.trim()) return true;
-    return p.post_title.toLowerCase().includes(searchText.toLowerCase());
+    return p[`post_title_${lang}`].toLowerCase().includes(searchText.toLowerCase());
   })
 
   return (
     <div className="container">
         <div className="container-content-post">
             {filteredPosts.map((post) => (
-                <div key={post.id} className="content-post-info">
+                <div key={post.pk} className="content-post-info">
                     <img src={post.post_image} alt="img" className="post-image" />
                     <div className="post-text">
-                        <h3 className="title-post">{post.post_title}</h3>
+                        <h3 className="title-post">{post[`post_title_${lang}`]}</h3>
                         <p className="data-post">{post.post_data}</p>
                         <div className="tags-post">
                             {(post.post_tags || []).map((tag, index) => (
                                 <span key={index} className="post-tag-item">{tag.trim()}</span>
                             ))}
                         </div>
-                        <p className="description-post">{post.post_description}</p>
-                        <a href={post.post_link} className="link-post" target="_blank">Подробнее...</a>
+                        <p className="description-post">{post[`post_description_${lang}`]}</p>
+                        <Link to={`${post.post_link}`} className="link-post">Подробнее...</Link>
                     </div>
                 </div>
             ))}

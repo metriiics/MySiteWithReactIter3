@@ -1,7 +1,10 @@
 import { useState, useEffect } from "react";
+import { useTranslation } from "react-i18next";
 
 export default function Projects() {
   const [projects, setProjects] = useState([]);
+  const { i18n } = useTranslation();
+  const lang = i18n.language === "ru" ? "ru" : "en";
 
   async function fetchProjects() {
     const response = await fetch("http://127.0.0.1:8000/api/projects/");
@@ -18,8 +21,8 @@ export default function Projects() {
 
       {projects.map((proj) => (
         <div key={proj.id} className="content-projects-info">
-          <h3 className="title-project">{proj.projects_title}</h3>
-          <p className="description-project">{proj.projects_description}</p>
+          <h3 className="title-project">{proj[`projects_title_${lang}`]}</h3>
+          <p className="description-project">{proj[`projects_description_${lang}`]}</p>
           <div className="tags-project">
             {(proj.projects_tags || []).map((tag, index) => (
                 <span key={index} className="project-tag-item">{tag.trim ? tag.trim() : tag}</span>
