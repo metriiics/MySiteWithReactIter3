@@ -1,0 +1,23 @@
+{
+  "footer": {
+    "copyright": "© 2025 Alexey Kochetkov."
+  },
+  
+  "Whois": {
+    "PresentationLayer": {
+      "heading": "Lorem Ipsum",
+      "description": "Lorem IpsumLorem IpsumLorem IpsumLorem IpsumvLorem IpsumLorem IpsumLorem IpsumLorem IpsumvLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem Ipsum"
+    },
+    "StackLayer": {
+      "heading": "My Stack",
+      "description": "Lorem IpsumLorem IpsumLorem IpsumLorem IpsumvLorem IpsumLorem IpsumLorem IpsumLorem IpsumvLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem Ipsum"
+    },
+    "AboutLayer": {
+      "heading": "About me",
+      "description": "Lorem IpsumLorem IpsumLorem IpsumLorem IpsumvLorem IpsumLorem IpsumLorem IpsumLorem IpsumvLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem Ipsum"
+    }
+  }
+
+
+
+}
