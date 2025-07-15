@@ -3,14 +3,19 @@ services:
     image: postgres:16
     volumes:
       - postgres_data:/var/lib/postgresql/data/
-    env_file:
-      - ./backend/.env
+    # env_file:
+    #   - ./backend/.env
     environment:
-      POSTGRES_DB: ${NAME}
-      POSTGRES_USER: ${USER}
-      POSTGRES_PASSWORD: ${PASSWORD}
+      - POSTGRES_PASSWORD=320330
+      - POSTGRES_USER=postgres
+      - POSTGRES_DB=MySiteDb
     networks:
       - app-network
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
 
   backend:
     build:
@@ -19,12 +24,20 @@ services:
     command: >
       sh -c "python manage.py migrate &&
              gunicorn core.wsgi:application --bind 0.0.0.0:8000"
+    environment:
+      - DATABASE_HOST=db
+      - DATABASE_PORT=5432
+      - DATABASE_NAME=MySiteDb
+      - DATABASE_USER=postgres
+      - DATABASE_PASSWORD=320330
     volumes:
       - ./backend:/code
-    env_file:
-      - ./backend/.env
+      - static_volume:/code/static
+    # env_file:
+    #   - ./backend/.env
     depends_on:
-      - db
+      db:
+        condition: service_healthy
     networks:
       - app-network
 
@@ -46,7 +59,8 @@ services:
     ports:
       - "80:80"
     volumes:
-    - ./nginx/default.conf:/etc/nginx/conf.d/default.conf
+      - ./nginx/default.conf:/etc/nginx/conf.d/default.conf
+      - static_volume:/code/static
     depends_on:
       - frontend
       - backend
@@ -57,6 +71,7 @@ services:
 volumes:
   postgres_data:
   frontend_build:
+  static_volume:
 
 networks:
   app-network:

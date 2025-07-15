@@ -1,4 +1,4 @@
-FROM python:3.11-slim
+FROM python:3.10
 
 ENV PYTHONDONTWRITEBYTECODE 1
 ENV PYTHONUNBUFFERED 1
@@ -14,8 +14,8 @@ RUN apt-get update \
 
 RUN pip install --upgrade pip && pip install -r requirements.txt
 
-COPY . /code/
+COPY . .
 
-# Можно добавить entrypoint.sh для миграций и запуска сервера
+RUN python manage.py collectstatic --noinput
 
 CMD ["gunicorn", "core.wsgi:application", "--bind", "0.0.0.0:8000"]
